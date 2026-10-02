@@ -41,24 +41,35 @@ The project follows the Medallion Architecture with three layers:
 Data is extracted from CRM and ERP source files and processed through the
 Bronze, Silver, and Gold layers.
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 sql-data-warehouse-project/
 │
-├── datasets/                    # Source CRM and ERP CSV files
+├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
-├── docs/                        # Project documentation and diagrams
+├── docs/                               # Project documentation and architecture details
+│   ├── data_architecture.drawio        # Overall data warehouse architecture
+│   ├── data_architecture.png           # Data warehouse architecture diagram
+│   ├── data_catalog.md                 # Catalog of Gold layer datasets and fields
+│   ├── data_flow.drawio                # Data flow through Bronze, Silver and Gold layers
+│   ├── data_flow.png                   # Data flow diagram
+│   ├── data_integration.drawio         # Data integration model
+│   ├── data_integration.png            # Data integration diagram
+│   ├── data_model.drawio               # Star schema data model
+│   ├── data_model.png                  # Data model diagram
+│   └── naming_conventions.md           # Naming conventions used in the project
 │
-├── scripts/                     # SQL scripts for ETL and transformations
-│   ├── bronze/                  # Raw data loading
-│   ├── silver/                  # Data cleaning and transformation
-│   └── gold/                    # Dimension and fact views
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   ├── gold/                           # Scripts for creating analytical views
+│   └── init_database.sql               # Database and schema initialization
 │
-├── tests/                       # Data quality checks
-├── init_database.sql            # Database initialization
-├── LICENSE                      # MIT License
-└── README.md                    # Project documentation
+├── tests/                              # Data quality and integrity checks
+│
+├── LICENSE                             # MIT License
+└── README.md                           # Project overview and documentation
 ```
 
 ## Data Model
