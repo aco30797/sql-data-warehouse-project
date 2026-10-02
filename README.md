@@ -24,6 +24,51 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 
 ---
 
+## Data Architecture
+
+![Data Architecture](docs/data_architecture.png)
+
+The project follows the Medallion Architecture with three layers:
+
+- **Bronze Layer:** Stores raw data from the source systems (CRM and ERP).
+- **Silver Layer:** Cleans, standardizes, and transforms the raw data.
+- **Gold Layer:** Provides business-ready data modeled as a star schema for analytics and reporting.
+
+## Data Flow
+
+![Data Flow](docs/data_flow.png)
+
+Data is extracted from CRM and ERP source files and processed through the
+Bronze, Silver, and Gold layers.
+
+## Repository Structure
+
+sql-data-warehouse-project/
+│
+├── datasets/              # Source CRM and ERP CSV files
+│
+├── docs/                  # Project documentation and diagrams
+│
+├── scripts/
+│   ├── bronze/            # Raw data loading
+│   ├── silver/            # Data cleaning and transformation
+│   └── gold/              # Dimension and fact views
+│
+├── tests/                 # Data quality checks
+├── init_database.sql      # Database initialization
+├── README.md
+└── LICENSE
+
+## Data Model
+
+![Data Model](docs/data_model.png)
+
+The Gold layer follows a star schema consisting of:
+
+- `gold.fact_sales`
+- `gold.dim_customers`
+- `gold.dim_products`
+
 ### BI: Analytics & Reporting (Data Analytics)
 
 #### Objective
