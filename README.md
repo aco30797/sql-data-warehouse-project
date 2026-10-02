@@ -43,21 +43,23 @@ Bronze, Silver, and Gold layers.
 
 ## Repository Structure
 
+```text
 sql-data-warehouse-project/
 │
-├── datasets/              # Source CRM and ERP CSV files
+├── datasets/                    # Source CRM and ERP CSV files
 │
-├── docs/                  # Project documentation and diagrams
+├── docs/                        # Project documentation and diagrams
 │
-├── scripts/
-│   ├── bronze/            # Raw data loading
-│   ├── silver/            # Data cleaning and transformation
-│   └── gold/              # Dimension and fact views
+├── scripts/                     # SQL scripts for ETL and transformations
+│   ├── bronze/                  # Raw data loading
+│   ├── silver/                  # Data cleaning and transformation
+│   └── gold/                    # Dimension and fact views
 │
-├── tests/                 # Data quality checks
-├── init_database.sql      # Database initialization
-├── README.md
-└── LICENSE
+├── tests/                       # Data quality checks
+├── init_database.sql            # Database initialization
+├── LICENSE                      # MIT License
+└── README.md                    # Project documentation
+```
 
 ## Data Model
 
